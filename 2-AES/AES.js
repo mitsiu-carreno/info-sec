@@ -1,9 +1,19 @@
 const crypto = require("crypto");
 
 const algorithm = "aes-256-gcm";
-
 // 32 bytes = 256-bit key
-const key = crypto.randomBytes(32);
+var key = crypto.randomBytes(32);
+
+
+function getKey(){
+  return key.toString('hex');
+}
+
+
+function setKey(newKey){
+  key = Buffer.from(newKey, 'hex');
+}
+
 
 function encrypt(text) {
   // initialization vector
@@ -47,7 +57,7 @@ function decrypt(data) {
 //console.log(encrypted);
 //console.log(decrypt(encrypted));
 
-module.exports = { encrypt, decrypt, key };
+module.exports = { encrypt, decrypt, getKey, setKey };
 
 //const AES = require('./AES.js');
 //AES.encrypt("Testing");
