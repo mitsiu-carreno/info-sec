@@ -1,3 +1,5 @@
+![Algorithm](./DiffieHellman.png)
+
 # Toy implementation
 
 ## Attributes
