@@ -49,16 +49,15 @@ This script require two terminals running the script
 
 | Client A     |  Server     | Client B     |
 |--------------|-------------|--------------|
-| ``` ``` | ```const DHServer = require('./real-server-diffiehellman.js')``` | ``` ``` |
-| ``` ``` | ```DHServer.getP() ``` | ``` ``` |
-| ``` ``` | ```'84d84b1add0661...'``` | ``` ``` |
-| ``` ``` | ```DHServer.getG()``` | ``` ``` |
+|  | ```const DHServer = require('./real-server-diffiehellman.js')``` |  |
+|  | ```DHServer.getP() ``` |  |
+|  | ```'84d84b1add0661...'``` |  |
+|  | ```DHServer.getG()``` |  |
 | ```const DHAlice = require('./real-client-diffiehellman.js') ``` | ```'02'``` | ```const DHBob = require('./real-client-diffiehellman.js')``` |
-| ``` ``` | ``` ``` | ``` ``` |
-| ```DHAlice.genPublicKey('84d84b1add0661...', '02') ``` | ``` ``` | ```DHBob.genPublicKey('84d84b1add0661...', '02')``` |
-| ```'205426821b5851...'``` | ``` ``` | ```'59f104498c0b19...'``` |
-| ```DHAlice.genPrivateKey('59f104498c0b19...')``` | ``` ``` | ```DHBob.genPrivateKey('205426821b5851...')``` |
-| ```'1322b08454f31a...'``` | ``` ``` | ```'1322b08454f31a...'``` |
+| ```DHAlice.genPublicKey('84d84b1add0661...', '02') ``` |  | ```DHBob.genPublicKey('84d84b1add0661...', '02')``` |
+| ```'205426821b5851...'``` |  | ```'59f104498c0b19...'``` |
+| ```DHAlice.genPrivateKey('59f104498c0b19...')``` |  | ```DHBob.genPrivateKey('205426821b5851...')``` |
+| ```'1322b08454f31a...'``` |  | ```'1322b08454f31a...'``` |
 | ```a ``` | ``` ``` | ```a ``` |
 | ```a ``` | ``` ``` | ```a ``` |
 
