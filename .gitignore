@@ -1,0 +1,5 @@
+.venv/
+node_modules/*
+tokens
+classes
+__pycache__/*
