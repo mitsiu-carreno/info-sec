@@ -29,7 +29,7 @@ This script require two terminals running the script
 
 | Terminal A     | Terminal B     |
 |----------------|----------------|
-| ```const AtoyDH = require('./toy-diffie-hellman.js') ``` | ```js const BtoyDH = require('./toy-diffie-hellman.js') ``` |
+| ```const AtoyDH = require('./toy-diffie-hellman.js') ``` | ```const BtoyDH = require('./toy-diffie-hellman.js') ``` |
 | ```AtoyDH.privateKey ``` | ```BtoyDH.privateKey ``` |
 | ```0 ``` | ```9 ``` |
 | ```AtoyDH.genPublicKey(17,3) ``` | ```BtoyDH.genPublicKey(17,3) ``` |
@@ -45,7 +45,7 @@ This script require two terminals running the script
 - getG                                  (Server)
 - validateSecrets                       (Server)
 - genPublicKey(p, g)                    (Client)
-- getnPrivateKey(others_publicKey)      (Client)
+- genSharedSecret(others_publicKey)     (Client)
 
 ## Example
 
@@ -58,7 +58,7 @@ This script require two terminals running the script
 | ```const DHAlice = require('./real-client-diffiehellman.js') ``` | ```'02'``` | ```const DHBob = require('./real-client-diffiehellman.js')``` |
 | ```DHAlice.genPublicKey('84d84b1add0661...', '02') ``` |  | ```DHBob.genPublicKey('84d84b1add0661...', '02')``` |
 | ```'205426821b5851...'``` |  | ```'59f104498c0b19...'``` |
-| ```DHAlice.genPrivateKey('59f104498c0b19...')``` |  | ```DHBob.genPrivateKey('205426821b5851...')``` |
+| ```DHAlice.genSharedSecret('59f104498c0b19...')``` |  | ```DHBob.genSharedSecret('205426821b5851...')``` |
 | ```'1322b08454f31a...'``` |  | ```'1322b08454f31a...'``` |
 | ```a ``` | ```DHServer.validateSecrets('1322b08454f31a...', '1322b08454f31a...')``` | ```a ``` |
 

@@ -7,12 +7,12 @@ function genPublicKey(p, g){
   return DH.generateKeys().toString('hex');
 }
 
-function genPrivateKey(publicKey){
+function genSharedSecret(publicKey){
   const secretKey = DH.computeSecret(Buffer.from(publicKey, 'hex'));
   return secretKey.toString('hex');
 }
 
-module.exports = { genPublicKey, genPrivateKey };
+module.exports = { genPublicKey, genSharedSecret };
 
 
 
