@@ -14,7 +14,7 @@ const aesKey = Buffer.from(
     sharedSecret,
     salt,
     info,
-    32
+    32  // 32 bytes == 256 bits
   )
 );
 
