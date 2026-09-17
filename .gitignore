@@ -3,3 +3,4 @@ node_modules/*
 tokens
 classes
 __pycache__/*
+.DS_Store
