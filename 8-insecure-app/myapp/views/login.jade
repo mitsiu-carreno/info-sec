@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  form#login-form
+    fieldset
+      legend Welcome back, miss your personal data so much!
+      p
+        label(for="email") Email:
+          input#email(type="email", name="email", required)
+      p
+        label(for="password") Password:
+          input#password(type="password", name="password", required)
+      a(href="/register") Or create an account
+    p.buttons
+      input(type="submit", value="Login")
+
+  script(src="/javascripts/login.js")

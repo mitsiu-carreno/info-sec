@@ -3,12 +3,13 @@ extends layout
 block content
   form(method="get", action="/registerBack")
     fieldset
-      legend Search
+      legend Welcome let's create an account
       p
         label(for="email") Email:
         input#email(type="email", name="email", required)
       p
         label(for="password") Password:
         input#password(type="password", name="password", required)
+      a(href="/login") Already registered? Login
     p.buttons
       input(type="submit", value="Register")

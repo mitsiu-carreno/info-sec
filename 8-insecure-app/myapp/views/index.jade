@@ -1,17 +1,20 @@
 extends layout
 
 block content
+  p.buttons
+    a(href="/logout") Logout
 
-  form#login-form
+  form#search-form
     fieldset
-      legend Welcome
+      legend Search
       p
         label(for="email") Email:
-          input#email(type="email", name="email", required)
-      p
-        label(for="password") Password:
-          input#password(type="password", name="password", required)
+        input#email(type="text", name="email")
     p.buttons
-      input(type="submit", value="Login")
+      input(type="submit", value="Search")
 
-  script(src="/javascripts/login.js")
+  h1 Users list:
+
+  pre#result
+
+  script(src="/javascripts/users.js")
