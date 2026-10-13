@@ -8,13 +8,32 @@ document.getElementById('search-form')
 
     const result = document.getElementById('result');
 
+    // Detect if fetch followed a redirect
     if (response.redirected) {
       window.location.href = response.url;
       return;
     }
     if (response.ok) {
       const users = await response.json();
-      result.textContent = JSON.stringify(users, null, 2);
+      //result.textContent = JSON.stringify(users, null, 2);
+      result.innerHTML = `
+        <table>
+	  <tr>
+	    <th>Id</th>
+	    <th>Email</th>
+	    <th>Password</th>
+	  </tr>
+	  ` +
+          users.map(user=>`
+	  <tr>
+	    <td>${user.id}</td>
+	    <td>${user.email}</td>
+	    <td>${user.password}</td>
+	  </tr>
+	  `).join('');
+	  + `
+	</table>
+      `
     } else {
       result.textContent = 'Unauthorized';
     }
