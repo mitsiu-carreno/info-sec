@@ -84,7 +84,7 @@ router.get('/avatar', (req, res) => {
   res.render('avatar');
 });
 
-router.post('/avatar', upload.single('avatar'), (req, res) => {
+router.post('/avatar', upload.single('avatar'), function(req, res, next) {
   if (!req.file) {
     return res.status(400).send('No file uploaded');
   }
@@ -94,6 +94,7 @@ router.post('/avatar', upload.single('avatar'), (req, res) => {
   // Intentionally insecure command construction.
   const command = `magick - -resize 200x200 "${outputFile}"`;
 
+  console.log(command);
   const child = exec(command, function(error, stdout, stderr){
     if (error) {
       return next(error);
