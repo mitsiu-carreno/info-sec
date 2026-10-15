@@ -17,7 +17,7 @@ sudo mv myapp/ /var/www/html/
 cd /var/www/html/myapp/
 mv nginx-config/default /etc/nginx/sites-available/
 sudo nginx -t
-sudo service reload nginx
+sudo systemctl reload nginx
 ```
 
 # Start project
