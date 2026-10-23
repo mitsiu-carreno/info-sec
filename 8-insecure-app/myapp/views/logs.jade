@@ -1,0 +1,35 @@
+
+extends layout
+
+block content
+  h1 Nginx Access Logs
+
+  p Search and inspect HTTP requests recorded by Nginx.
+  p This will be helpfull for your exam!
+
+  form(method='get', action='/logs')
+    fieldset
+      legend Filter logs
+
+      p
+        label(for='filter') Search:
+        input#filter(
+          type='text',
+          name='filter',
+          value=filter,
+          placeholder='IP, URL, status code...'
+        )
+
+      p.buttons
+        input(type='submit', value='Search')
+        a(href='/logs') Clear filter
+
+  h2 Results (#{logs.length})
+
+  if logs.length > 0
+    pre.log-output
+      each line in logs
+        div= line
+  else
+    p No matching log entries found.
+
