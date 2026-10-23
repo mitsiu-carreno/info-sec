@@ -36,4 +36,5 @@ cd myapp
 sudo npm install
 
 DEBUG=myapp:* npm start
+NODE_ENV=production npm start
 ```
