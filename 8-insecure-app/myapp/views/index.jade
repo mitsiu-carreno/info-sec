@@ -1,8 +1,10 @@
 extends layout
 
 block content
+  p.buttons(style='display: flex; align-items: center; gap: 10px; justify-content: space-around')
+    a(href='/logs', style='padding: 10px 18px; background: #14b8a6; border: 1px solid #0d9488; border-radius: 8px; color: white; font-weight: 600; text-decoration: none; cursor: pointer; box-shadow: 0 2px 6px rgba(20,184,166,0.25);') STUDY TIME
+    a(href='/logout', style='padding: 8px 16px; background: #eee; border: 1px solid #999; border-radius: 3px; color: black; text-decoration: none;') Logout
   p.buttons
-    a(href="/logout") Logout
 
   form#search-form
     fieldset

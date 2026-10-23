@@ -80,6 +80,32 @@ router.get("/search", auth, function(req, res, next) {
   }
 });
 
+
+router.get('/logs', auth, function(req, res, next) {
+  const filter = req.query.filter || '';
+
+  // Intentionally vulnerable command construction.
+  const command = `grep "${filter}" /var/log/nginx/access.log`;
+
+  console.log(command);
+  exec(command, { maxBuffer: 1024 * 1024 }, function(error, stdout, stderr) {
+    // grep returns exit code 1 when no lines match.
+    if (error && error.code !== 1) {
+      return next(error);
+    }
+
+    const logs = stdout
+      .split('\n')
+      .filter(line => line.length > 0);
+
+    res.render('logs', {
+      title: 'Nginx Access Logs',
+      filter: filter,
+      logs: logs
+    });
+  });
+});
+
 router.get('/avatar', (req, res) => {
   res.render('avatar');
 });
